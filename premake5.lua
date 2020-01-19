@@ -1,5 +1,7 @@
 
+include "Hazel"
 hazelWorkspace("Sandbox")
+setupHazel()
 
 project "Sandbox"
 
@@ -11,7 +13,6 @@ project "Sandbox"
 		"src/**.h",
 		"src/**.cpp"
 	}
-
 
 	includedirs
 	{
