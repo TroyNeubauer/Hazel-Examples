@@ -1,12 +1,11 @@
 
+hazelClientLocation = debug.getinfo(1).source:match("@?(.*/)")
+
 include "Hazel"
-hazelWorkspace("Sandbox")
-setupHazel()
+HazelWorkspace("Sandbox")
+SetupHazel()
 
 project "Sandbox"
-
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
@@ -19,7 +18,7 @@ project "Sandbox"
 		"src/",
 	}
 
-	HazelDependencies()
+	HazelExecutable()
 
 	filter "system:emscripten"
 		linkoptions

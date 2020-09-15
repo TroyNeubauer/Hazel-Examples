@@ -13,7 +13,7 @@ Sandbox* sandbox;
 Sandbox::Sandbox()
 {
 
-	m_Lights.push_back({ vec3(1.0f, 20.0f, -5.0f), vec3(23.47f, 21.31f, 20.79f) });
+	m_Lights.push_back({ glm::vec3(1.0f, 20.0f, -5.0f), glm::vec3(23.47f, 21.31f, 20.79f) });
 	sandbox = this;
 	PushLayer(new ExampleLayer());
 	PushOverlay(new Hazel::DebugLayer());
@@ -30,7 +30,7 @@ Sandbox::Sandbox()
 	Hazel::Ref<Hazel::Shader> shader = Hazel::Shader::Create("assets/shaders/test.glsl");
 
 	m_Camera.reset(new Hazel::FPSCamera(50.0f));
-	m_Camera->SetPosition(vec3(0.0f, 0.0f, 5.0f));
+	m_Camera->SetPosition(glm::vec3(0.0f, 0.0f, 5.0f));
 	m_Camera->RecalculateViewMatrix();
 
 	m_terrain = new Terrain(shader, -3000.0f, 3000.0f, -3000.0f, 3000.0f, -2.0f, 8, 100.0f);
@@ -55,7 +55,7 @@ Sandbox::Sandbox()
 	}
 }
 
-std::ostream& operator<<(std::ostream& os, const vec3& vec) { return os << '[' << vec.x << ", " << vec.y << ", " << vec.z << ", " << ']'; }
+std::ostream& operator<<(std::ostream& os, const glm::vec3& vec) { return os << '[' << vec.x << ", " << vec.y << ", " << vec.z << ", " << ']'; }
 
 void Sandbox::Update(Hazel::Timestep ts)
 {

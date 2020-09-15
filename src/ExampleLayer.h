@@ -26,8 +26,8 @@ public:
 		//ImGui::DragFloat3("Light Color", &lightColor.x, 0.01f, 0.0f, 1.0f);
 		ImGui::Text("Altitude: %.1f", sandbox->m_Camera->GetStorage().GetPosition().y);
 		ImGui::Text("X: %.1f, Z: %.1f", sandbox->m_Camera->GetStorage().GetPosition().x, sandbox->m_Camera->GetStorage().GetPosition().z);
-		ImGui::Text("Pitch: %.1f, Yaw: %.1f, Roll: %.1f", degrees(sandbox->m_Camera->GetStorage().GetEulerAngles().x), 
-			degrees(sandbox->m_Camera->GetStorage().GetEulerAngles().y), degrees(sandbox->m_Camera->GetStorage().GetEulerAngles().z));
+		ImGui::Text("Pitch: %.1f, Yaw: %.1f, Roll: %.1f", glm::degrees(sandbox->m_Camera->GetStorage().GetEulerAngles().x), 
+			glm::degrees(sandbox->m_Camera->GetStorage().GetEulerAngles().y), glm::degrees(sandbox->m_Camera->GetStorage().GetEulerAngles().z));
 		ImGui::ColorEdit3("Light Color", glm::value_ptr(sandbox->m_Lights[0].color));
 		ImGui::SliderFloat("Light X", &sandbox->m_Lights[0].position.x, -10, 10);
 		ImGui::SliderFloat("Light Y", &sandbox->m_Lights[0].position.y, -100, 100);
